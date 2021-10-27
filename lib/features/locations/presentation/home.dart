@@ -65,11 +65,13 @@ class _HomeState extends State<Home> {
           } else if (locationController.errorMessage.value != '') {
             return Center(
               child: GestureDetector(
-                  onTap: () {
-                    locationController.getAllLocations();
-                  },
-                  child: Text(
-                      "${locationController.errorMessage.value}\nTap to refresh")),
+                onTap: () {
+                  locationController.getAllLocations();
+                },
+                child: Text(
+                    "${locationController.errorMessage.value}\nTap to refresh",
+                    textAlign: TextAlign.center),
+              ),
             );
           } else {
             for (var location in locationController.allLocations) {
